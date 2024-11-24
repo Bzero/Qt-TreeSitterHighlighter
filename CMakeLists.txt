@@ -13,6 +13,12 @@ add_library(tree-sitter
     ${CMAKE_SOURCE_DIR}/libs/tree-sitter/lib/src/lib.c
 )
 
+add_library(tree-sitter-cpp
+    ${CMAKE_SOURCE_DIR}/libs/tree-sitter-cpp/src/parser.c
+    ${CMAKE_SOURCE_DIR}/libs/tree-sitter-cpp/src/scanner.c
+    ${CMAKE_SOURCE_DIR}/libs/tree-sitter-cpp/src/tree_sitter/parser.h
+)
+
 
 #### TreeSitterHighlighter ####
 add_library(tree-sitter-highlighter
@@ -27,4 +33,20 @@ target_link_libraries(tree-sitter-highlighter PRIVATE
     Qt6::Gui
     Qt6::Widgets
     tree-sitter
+)
+
+
+#### Examples ####
+qt_add_executable(tree-sitter-highlighter-example
+    ${CMAKE_SOURCE_DIR}/examples/main.cpp
+)
+target_include_directories(tree-sitter-highlighter-example PRIVATE
+    ${CMAKE_SOURCE_DIR}/src/
+)
+target_link_libraries(tree-sitter-highlighter-example PRIVATE
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Widgets
+    tree-sitter-cpp
+    tree-sitter-highlighter
 )
