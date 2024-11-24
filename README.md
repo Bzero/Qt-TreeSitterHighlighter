@@ -34,3 +34,6 @@ Run the example to see see Qt-TreeSitterHighlighter in action:
 
 ## Contributing
 Contributions are very welcome!
+
+## License
+Qt-TreeSitterHighlighter is licensed under the [MIT License](./LICENSE).
