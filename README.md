@@ -19,6 +19,8 @@ An example on how to use Qt-TreeSitterHighlighter can be found in [./examples/ma
 
 To build the example the [tree-sitter-cpp](https://github.com/tree-sitter/tree-sitter-cpp) parser is needed as well.
 
+`tree-sitter` and `tree-sitter-cpp` are automatically included if the repository is cloned with the `--recurse-submodules` flag.
+
 ## Building
 
 ```
