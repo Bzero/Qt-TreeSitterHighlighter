@@ -12,6 +12,10 @@ qt_standard_project_setup()
 add_library(tree-sitter
     ${CMAKE_SOURCE_DIR}/libs/tree-sitter/lib/src/lib.c
 )
+target_include_directories(tree-sitter PRIVATE
+    ${CMAKE_SOURCE_DIR}/libs/tree-sitter/lib/src
+    ${CMAKE_SOURCE_DIR}/libs/tree-sitter/lib/include
+)
 
 add_library(tree-sitter-cpp
     ${CMAKE_SOURCE_DIR}/libs/tree-sitter-cpp/src/parser.c
@@ -25,7 +29,7 @@ add_library(tree-sitter-highlighter
     ${CMAKE_SOURCE_DIR}/src/TreeSitterHighlighter.cpp
     ${CMAKE_SOURCE_DIR}/src/TreeSitterHighlighter.h
 )
-target_include_directories(tree-sitter PRIVATE
+target_include_directories(tree-sitter-highlighter PRIVATE
     ${CMAKE_SOURCE_DIR}/libs/tree-sitter/lib/include
 )
 target_link_libraries(tree-sitter-highlighter PRIVATE
@@ -41,6 +45,7 @@ qt_add_executable(tree-sitter-highlighter-example
     ${CMAKE_SOURCE_DIR}/examples/main.cpp
 )
 target_include_directories(tree-sitter-highlighter-example PRIVATE
+    ${CMAKE_SOURCE_DIR}/libs/tree-sitter/lib/include
     ${CMAKE_SOURCE_DIR}/src/
 )
 target_link_libraries(tree-sitter-highlighter-example PRIVATE
