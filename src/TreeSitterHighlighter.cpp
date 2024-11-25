@@ -31,7 +31,7 @@ TreeSitterHighlighter::TreeSitterHighlighter(const TSLanguage* language, QTextDo
     this->query = ts_query_new(this->language, "", 0, &error_offset, &error_type);
 
     // Create emty tree
-    this->tree = ts_parser_parse_string_encoding(this->parser, NULL, "", 0, TSInputEncodingUTF16);
+    this->tree = ts_parser_parse_string_encoding(this->parser, NULL, "", 0, TSInputEncodingUTF16LE);
 
     // Create emtpty format map
     this->format_map = FormatMap();
@@ -148,7 +148,7 @@ BlockRange TreeSitterHighlighter::reparse_range(int start, int old_end, int new_
     // reparse
     QString s = this->document->toPlainText();
     ts_tree_delete(this->tree);
-    this->tree = ts_parser_parse_string_encoding(this->parser, old_tree, (char*)s.utf16(), s.length() * 2, TSInputEncodingUTF16);
+    this->tree = ts_parser_parse_string_encoding(this->parser, old_tree, (char*)s.utf16(), s.length() * 2, TSInputEncodingUTF16LE);
 
     // Compute changed ranges
     int changed_ranges_start_pos = start;
@@ -178,7 +178,7 @@ void TreeSitterHighlighter::reparse() {
 
     QString s = this->document->toPlainText();
     ts_tree_delete(this->tree);
-    this->tree = ts_parser_parse_string_encoding(this->parser, NULL, (char*)s.utf16(), s.length() * 2, TSInputEncodingUTF16);
+    this->tree = ts_parser_parse_string_encoding(this->parser, NULL, (char*)s.utf16(), s.length() * 2, TSInputEncodingUTF16LE);
 }
 
 // Clear the given block range.
