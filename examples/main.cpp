@@ -11,7 +11,7 @@ const TSLanguage* tree_sitter_cpp(void);
 }
 
 // A minimal highlights query for C++
-// See https://tree-sitter.github.io/tree-sitter/using-parsers#query-syntax for query syntax.
+// See https://tree-sitter.github.io/tree-sitter/using-parsers/queries/1-syntax.html for query syntax.
 std::string query = R"(
 ["extern" "catch" "class" "delete" "namespace" "new" "private" "protected" "public"
  "throw" "try" "requires" "virtual" "break" "case" "const" "continue" "do" "else"

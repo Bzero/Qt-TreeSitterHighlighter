@@ -7,7 +7,7 @@ It makes use of [tree-sitter](https://tree-sitter.github.io/tree-sitter/), an in
 To use Qt-TreeSitterHighlighter, three configuration elements have to be provided:
 
 * A tree-sitter [language](https://tree-sitter.github.io/tree-sitter/using-parsers#the-basic-objects) to parse the source and construct a syntax tree. Most often one of the [readily available parsers](https://github.com/tree-sitter/tree-sitter/wiki/List-of-parsers) can be used.
-* A tree-sitter highlighting [query string](https://tree-sitter.github.io/tree-sitter/using-parsers#query-syntax) to extract the relevant captures from the syntax tree. Most available parsers also come with a highlight query.
+* A tree-sitter highlighting [query string](https://tree-sitter.github.io/tree-sitter/using-parsers/queries/1-syntax.html) to extract the relevant captures from the syntax tree. Most available parsers also come with a highlight query.
 * A highlighting format map to map capture names to their desired [QTextCharFormat](https://doc.qt.io/qt-6/qtextcharformat.html) format.
 
 An example on how to use Qt-TreeSitterHighlighter can be found in [./examples/main.cpp](./examples/main.cpp).
