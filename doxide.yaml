@@ -1,0 +1,8 @@
+title: Qt-TreeSitterHighlighter
+description: A tree-sitter syntax highlighter for Qt.
+output: docs/reference
+files:
+  - "src/*.h"
+defines:
+  slots: ""
+  Q_OBJECT: ""
